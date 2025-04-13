@@ -1,36 +1,106 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🪙⛓️ Donate Crypto - Plataforma de Doações via Web3
 
-## Getting Started
+Um dApp (aplicativo descentralizado) simples, construído com React e Web3.js, que permite a criação e doação para campanhas diretamente na blockchain. Ideal para iniciativas sociais como ajuda a ONGs, resgates de animais, apoio a causas pessoais, entre outros.
 
-First, run the development server:
+---
+
+## 🚀 Funcionalidades
+
+- ✅ Login com MetaMask
+- 📝 Cadastro de campanhas com título, descrição, vídeo e imagem
+- 💸 Doação em criptomoeda (POL) diretamente para campanhas
+- 🎥 Visualização da campanha com player de vídeo
+- 🔒 Integração com contrato inteligente na rede blockchain
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Web3.js](https://web3js.readthedocs.io/)
+- [MetaMask](https://metamask.io/) (extensão)
+- Solidity (para o contrato inteligente)
+
+---
+
+## 🧪 Pré-requisitos
+
+Antes de iniciar, você precisa ter:
+
+- [Node.js](https://nodejs.org/en/) instalado
+- [MetaMask](https://metamask.io/) instalada no navegador
+- Alguma rede de testes (ex: Polygon Mumbai Testnet) ou local (eu utilizei o https://amoy.polygonscan.com/)
+- Faucet (criptomoeda de teste) para simular doações
+
+💧 Para adquirir criptomoedas de teste (faucets), você pode usar:
+
+- [https://faucet.luiztools.com.br/](https://faucet.luiztools.com.br/#)
+
+Há também outros sites de faucet disponíveis para cada rede de teste. Certifique-se de selecionar a mesma rede configurada no seu MetaMask.
+
+---
+
+## ⚙️ Como rodar o projeto
 
 ```bash
+# Clone o repositório
+git clone https://github.com/seu-usuario/seu-repo.git
+cd seu-repo
+
+# Instale as dependências
+npm install
+
+# Rode a aplicação
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🔗 Contrato Inteligente
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+O contrato inteligente usado neste projeto foi desenvolvido com [Solidity](https://soliditylang.org/) e está incluído na pasta `contracts/` do repositório (arquivo: `DonateCrypto.sol`).
 
-## Learn More
+### Como utilizar
 
-To learn more about Next.js, take a look at the following resources:
+1. Acesse o [Remix IDE](https://remix.ethereum.org/).
+2. Crie uma nova pasta chamada `contracts` e envie o arquivo `DonateCrypto.sol` para ela.
+3. Vá até a aba **Solidity Compiler**, ative a opção **Enable Optimization** e compile o contrato.
+4. Em seguida, na aba **Deploy & Run Transactions**, selecione o ambiente **Injected Provider - MetaMask** (ou outro de sua preferência).
+5. Faça o **deploy** do contrato e copie o endereço gerado.
+6. Por fim, atualize a constante `CONTRACT_ADDRESS` no arquivo `Web3Service.js` com esse novo endereço:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```js
+const CONTRACT_ADDRESS = "cole_aqui_o_endereco_do_seu_contrato";
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Funções principais:**
+  - `addCampaign(title, description, videoUrl, imageUrl)`
+  - `donate(campaignId)`
+  - `getCampaign(id)`
+  - `nextId()`
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📂 Estrutura de pastas
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+
+src/
+├── app/ # Páginas principais do app
+├── services/ # Web3Service para lidar com blockchain
+└── ABI.json # Interface do contrato inteligente
+
+```
+
+---
+
+## 💡 Melhorias futuras
+
+- 🖼️ Preview da imagem da campanha antes de cadastrar
+- 🔔 Mensagens de erro e sucesso nas ações
+- 📊 Total de doações por campanha
+- 📱 Melhor responsividade mobile
+
+---
+```
+
