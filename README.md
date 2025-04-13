@@ -81,17 +81,6 @@ const CONTRACT_ADDRESS = "cole_aqui_o_endereco_do_seu_contrato";
 
 ---
 
-## 📂 Estrutura de pastas
-
-```
-
-src/
-├── app/ # Páginas principais do app
-├── services/ # Web3Service para lidar com blockchain
-└── ABI.json # Interface do contrato inteligente
-
-```
-
 ---
 
 ## 💡 Melhorias futuras
