@@ -59,7 +59,7 @@ npm run dev
 
 ## 🔗 Contrato Inteligente
 
-O contrato inteligente utilizado neste projeto foi desenvolvido em [Solidity](https://soliditylang.org/) e está localizado na pasta `contracts/` do repositório, no arquivo `DonateCrypto.sol`.
+O contrato inteligente utilizado neste projeto foi desenvolvido em [Solidity](https://soliditylang.org/) e está localizado na pasta `smart-contract/` do repositório, no arquivo `DonateCrypto.sol`.
 
 ### Como Utilizar
 
