@@ -5,17 +5,21 @@ import { useState } from "react";
 import { doLogin } from "@/services/Web3Service";
 
 export default function Home() {
-  const { push } = useRouter();
+  const router = useRouter();
 
   const [message, setMessage] = useState();
 
+  const [loading, setLoading] = useState(false);
+
   function btnLoginClick() {
+    setLoading(true);
     setMessage("Conectando na carteira... aguarde...");
     doLogin()
-      .then((account) => push("/create"))
+      .then((account) => router.push("/create"))
       .catch((err) => {
         console.error(err);
         setMessage(err.message);
+        setLoading(false);
       });
   }
 
@@ -47,9 +51,15 @@ export default function Home() {
                 type="button"
                 className="btn btn-primary btn-lg px-4 me-2"
                 onClick={btnLoginClick}
+                disabled={loading} // desativa o botão durante o loading
               >
-                <img src="/metamask.svg" width={64} className="me-2" />
-                Conectar com a MetaMask
+                <img
+                  src="/metamask.svg"
+                  width={32}
+                  className="me-2"
+                  alt="MetaMask"
+                />
+                {loading ? "Conectando..." : "Conectar com a MetaMask"}
               </button>
             </div>
             {message ? (
