@@ -59,36 +59,36 @@ npm run dev
 
 ## 🔗 Contrato Inteligente
 
-O contrato inteligente usado neste projeto foi desenvolvido com [Solidity](https://soliditylang.org/) e está incluído na pasta `contracts/` do repositório (arquivo: `DonateCrypto.sol`).
+O contrato inteligente utilizado neste projeto foi desenvolvido em [Solidity](https://soliditylang.org/) e está localizado na pasta `contracts/` do repositório, no arquivo `DonateCrypto.sol`.
 
-### Como utilizar
+### Como Utilizar
 
-1. Acesse o [Remix IDE](https://remix.ethereum.org/).
-2. Crie uma nova pasta chamada `contracts` e envie o arquivo `DonateCrypto.sol` para ela.
-3. Vá até a aba **Solidity Compiler**, ative a opção **Enable Optimization** e compile o contrato.
-4. Em seguida, na aba **Deploy & Run Transactions**, selecione o ambiente **Injected Provider - MetaMask** (ou outro de sua preferência).
-5. Faça o **deploy** do contrato e copie o endereço gerado.
-6. Por fim, atualize a constante `CONTRACT_ADDRESS` no arquivo `Web3Service.js` com esse novo endereço:
+1.  Acesse o [Remix IDE](https://remix.ethereum.org/).
+2.  Crie uma nova pasta chamada `contracts` e carregue o arquivo `DonateCrypto.sol` para ela.
+3.  Na aba **Solidity Compiler**, ative a opção **Enable Optimization** e compile o contrato.
+4.  Na aba **Deploy & Run Transactions**, selecione o ambiente **Injected Provider - MetaMask** (ou outro de sua preferência).
+5.  Realize o **deploy** do contrato e copie o endereço gerado.
+6.  Atualize a constante `CONTRACT_ADDRESS` no arquivo `Web3Service.js` com o novo endereço do contrato:
 
-```js
-const CONTRACT_ADDRESS = "cole_aqui_o_endereco_do_seu_contrato";
+    ```javascript
+    const CONTRACT_ADDRESS = "cole_aqui_o_endereco_do_seu_contrato";
+    ```
 
-- **Funções principais:**
-  - `addCampaign(title, description, videoUrl, imageUrl)`
-  - `donate(campaignId)`
-  - `getCampaign(id)`
-  - `nextId()`
+### Funções Principais
+
+* `addCampaign(title, description, videoUrl, imageUrl)`: Adiciona uma nova campanha ao contrato.
+* `donate(campaignId)`: Permite realizar uma doação para uma campanha específica.
+* `getCampaign(id)`: Retorna os detalhes de uma campanha com base no seu ID.
+* `nextId()`: Retorna o próximo ID disponível para uma nova campanha.
 
 ---
 
----
+## 💡 Melhorias Futuras
 
-## 💡 Melhorias futuras
-
-- 🖼️ Preview da imagem da campanha antes de cadastrar
-- 🔔 Mensagens de erro e sucesso nas ações
-- 📊 Total de doações por campanha
-- 📱 Melhor responsividade mobile
+* ️🖼️ Pré-visualização da imagem da campanha antes do cadastro.
+* 🔔 Mensagens de erro e sucesso para feedback das ações do usuário.
+* 📊 Exibição do total de doações por campanha.
+* 📱 Melhorias na responsividade para dispositivos móveis.
 
 ---
 ```
