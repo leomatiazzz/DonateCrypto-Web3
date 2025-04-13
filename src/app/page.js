@@ -55,7 +55,7 @@ export default function Home() {
               >
                 <img
                   src="/metamask.svg"
-                  width={32}
+                  width={64}
                   className="me-2"
                   alt="MetaMask"
                 />
